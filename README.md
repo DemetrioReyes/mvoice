@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# MarketVoice Innovations - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page oficial de MarketVoice Innovations, un call center bilingue de alto rendimiento. La pagina esta dirigida tanto a empresas que buscan servicios de contact center como a talentos que quieren unirse al equipo.
 
-Currently, two official plugins are available:
+## Descripcion del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Pagina web de una sola pagina (SPA) con soporte bilingue (espanol e ingles) que incluye:
 
-## React Compiler
+- Presentacion de la empresa, mision y vision
+- Valores corporativos
+- Razones para elegir MarketVoice como proveedor (para empresas)
+- Beneficios laborales y proceso de contratacion (para candidatos)
+- Formulario de aplicacion a vacantes
+- Cambio dinamico de idioma sin recargar la pagina
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack Tecnologico
 
-## Expanding the ESLint configuration
+- React 19
+- TypeScript 6
+- Vite 8
+- CSS modular por componente
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Estructura del Proyecto
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+  components/
+    Header/              # Navegacion y selector de idioma
+    Hero/                # Seccion principal con estadisticas
+    MisionVision/        # Mision, vision y por que elegirnos
+    Valores/             # Valores corporativos
+    PorQueElegirnos/     # Propuesta de valor para empresas
+    BeneficiosLaborales/ # Beneficios y proceso de contratacion
+    FormularioAplicacion/ # Formulario para candidatos
+    Footer/              # Pie de pagina con enlaces y contacto
+  hooks/
+    useAnimacionScroll.ts # Hook para animaciones al hacer scroll
+  i18n/
+    IdiomaContexto.tsx   # Contexto global de idioma (es/en)
+    traducciones.ts      # Textos en espanol e ingles
+  types/
+    index.ts             # Tipos compartidos
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Comandos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Instalar dependencias
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Servidor de desarrollo
+npm run dev
+
+# Build de produccion
+npm run build
+
+# Preview del build
+npm run preview
+
+# Lint
+npm run lint
 ```
+
+## Cobertura
+
+La landing esta orientada a mercados de LATAM, USA y Espana, con contenido completamente disponible en espanol e ingles.
