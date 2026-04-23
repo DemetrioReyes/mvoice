@@ -1,0 +1,159 @@
+.mision-vision {
+  background-color: #111111;
+  padding: 70px 0;
+}
+
+.mv-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.mv-encabezado {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.mv-etiqueta {
+  display: inline-block;
+  background-color: rgba(45, 191, 176, 0.1);
+  border: 1px solid rgba(45, 191, 176, 0.25);
+  color: #2DBFB0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.mv-titulo {
+  font-size: clamp(24px, 5vw, 42px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+}
+
+.mv-subtitulo {
+  font-size: 15px;
+  color: #888888;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.mv-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mv-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 28px 24px;
+  transition: border-color 0.2s;
+}
+
+.mv-card:hover {
+  border-color: rgba(45, 191, 176, 0.3);
+}
+
+.mv-card--destacada {
+  border-color: rgba(45, 191, 176, 0.2);
+  background-color: rgba(45, 191, 176, 0.03);
+}
+
+.mv-card-icono {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(45, 191, 176, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.mv-card-titulo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+}
+
+.mv-card-texto {
+  font-size: 14px;
+  color: #999999;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.mv-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mv-lista li {
+  font-size: 14px;
+  color: #999999;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.mv-lista li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  background-color: #2DBFB0;
+  border-radius: 50%;
+}
+
+@media (min-width: 600px) {
+  .mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .mv-card--destacada {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 960px) {
+  .mision-vision {
+    padding: 100px 0;
+  }
+
+  .mv-contenedor {
+    padding: 0 24px;
+  }
+
+  .mv-encabezado {
+    margin-bottom: 64px;
+  }
+
+  .mv-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .mv-card--destacada {
+    grid-column: auto;
+  }
+
+  .mv-subtitulo {
+    font-size: 17px;
+  }
+}

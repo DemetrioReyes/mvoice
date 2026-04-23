@@ -1,0 +1,66 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #cccccc;
+  background-color: #111111;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111111;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Animaciones de scroll */
+[data-animar] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+[data-animar][data-delay="100"] { transition-delay: 100ms; }
+[data-animar][data-delay="150"] { transition-delay: 150ms; }
+[data-animar][data-delay="200"] { transition-delay: 200ms; }
+[data-animar][data-delay="300"] { transition-delay: 300ms; }
+[data-animar][data-delay="400"] { transition-delay: 400ms; }
+[data-animar][data-delay="500"] { transition-delay: 500ms; }
+
+[data-animar].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animar] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
